@@ -20,7 +20,9 @@ No distance filter is applied to physical provisions. Location is one signal amo
 
 Matches are ordered by semantic proximity. The underlying record never changes.
 
-**4. Output** — a match is a pointer to two existing signals, nothing more. The reader hands matches to whatever notification path the local client already uses. It defines no transport or messaging protocol of its own.
+**4. Provenance** — nodes may optionally declare a `built from` reference at registration — an external source or another node's ID. The reader can also cluster on this: nodes sharing the same `built from` value surface as siblings, independent of semantic proximity. This is a second, separate matching mode from failure → learning — it answers "who else built this," not "what solves this."
+
+**5. Output** — a match is a pointer to two existing signals, nothing more. The reader hands matches to whatever notification path the local client already uses. It defines no transport or messaging protocol of its own.
 
 ---
 
