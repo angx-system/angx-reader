@@ -28,6 +28,8 @@ Each signal becomes a point in the vector space — close to other signals about
 
 A failure signal near a learning signal — the same problem already solved somewhere else in the record. A method near a problem — documented expertise near a failure, logged by someone who has never heard of the person who needed it.
 
+Nodes that cite the same `built from` reference — the same external design, or the same upstream node — can be grouped as a family, even if their own descriptions read nothing alike.
+
 None of these matches move anything. Each is a pointer to two places in the existing record, ordered by semantic proximity. The steward reads and decides.
 
 ---
