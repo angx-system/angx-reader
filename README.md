@@ -16,7 +16,7 @@ angeliaX does not record what is needed, requested, or wanted. That line is deli
 
 The reader pairs a failure signal only with learning signals — documented methods, fixes, hacks, confirmed solutions. It does not matter which log the failure or the learning signal belongs to. A commons failure (e.g., crop heat damage) can be solved by an operational learning signal (e.g., a method for building a shade structure).
 
-Because the filter is failure → learning only, a failure can never surface a commons node's surplus either — surplus is logged as an operational signal, not a learning one, so it was never a valid match target to begin with.
+Because the filter is failure → learning only, a failure can never surface a commons node's surplus either — surplus is never logged as a learning signal — it's stated once at registration and confirmed through ongoing operational signals, so it was never a valid match target to begin with.
 
 **Example.** A food bank in Lima logs a failure signal: "50kg rice spoiled this week. Storage humidity too high, no dehumidifying method in place." The reader searches only for learning signals — and finds one, logged eight months earlier by a farm on another continent: a low-cost humidity-control method for grain storage, documented in full. The steward reads it, tries it, and logs the outcome on their own node. Nothing was requested. Nothing was matched to a need. A failure met a method that already existed.
 
