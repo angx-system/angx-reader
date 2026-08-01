@@ -12,7 +12,7 @@ angx-reader runs alongside an ANGX client, on whatever device that client alread
 
 **2. Embedding** — `paraphrase-multilingual-MiniLM-L12-v2`, or equivalent. Multilingual embedding model. Runs on CPU via ONNX Runtime. Downloaded once at setup. Converts signal text into a vector — two signals about the same problem land near each other regardless of language, with no translation layer. Zero internet, zero cost per query.
 
-**3. Matching** — each new signal is passed to the embedding model and the resulting vector stored in `vectors/`. Matching is filtered by the signal's own type field, already explicit in the schema — vector proximity alone is never enough:
+**3. Matching** — each new signal is passed to the embedding model and the resulting vector stored in `vectors/`. Both steward and witness signals are embedded and matched equally. Matching is filtered by the signal's own type field, already explicit in the schema — vector proximity alone is never enough:
 
 A `failure` signal matches only against `learning` signals — documented fixes, methods, hacks, confirmed solutions. This applies across both operational and commons feeds: a commons failure (e.g., crop heat damage) can match an operational learning signal (e.g., a shade-structure method), and vice versa. The type filter is hardcoded: `failure` → `learning` only.
 
