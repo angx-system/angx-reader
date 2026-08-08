@@ -166,12 +166,9 @@ entry surfaces the other, along with the shared `built from` reference
 they both point to. The Blantyre node itself is not a sibling of either
 — it's what they both point to, not something pointing anywhere itself.
 
-Clustering applies equally to external references: if two or more nodes
-independently cite the exact same URL as `built from`, they cluster as
-siblings the same way — matched on exact string value, not fuzzy or
-normalized. Two entries citing slightly different URLs for the same
-repository (a typo, a different link format) do not currently cluster;
-only exact matches do.
+Clustering applies equally to external references: two or more nodes
+citing the same external source as `built from` cluster as siblings the
+same way.
 
 ## 7. Output
 
