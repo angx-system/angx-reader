@@ -90,6 +90,11 @@ surface a new match for an old failure without anyone re-querying manually
 — the indexer is always running, so the next time a lookup happens, the
 result reflects whatever is currently true.
 
+Matching never weighs outcome history. A learning signal with
+contradicting witness failures ranks identically to one with only
+corroborations — reader surfaces both signals; judging what the
+contradiction means is left entirely to the steward reading them.
+
 ## 4. Reader on a base
 
 Everything above applies identically whether reader runs on a steward's own
@@ -138,14 +143,35 @@ steward holds work not curated by any base, or wants matching independent
 of any base's collection. Not the default path for most stewards; a
 supplement for niche work or work unreplicated elsewhere.
 
-## 6. Provenance
+## 6. Provenance — lineage clustering
 
-Nodes may optionally declare a `built from` reference at registration — an
-external source or another node's ID. The indexer can also cluster on this:
-nodes sharing the same `built from` value surface as siblings, independent
-of semantic proximity. This is a second, separate matching mode from
-failure → learning — it answers "who else built this," not "what solves
-this."
+Nodes may optionally declare a `built from` reference at registration —
+an external source (a URL) or a Node ID found through ANGX itself. The
+indexer clusters nodes that cite the *same* `built from` value as
+**siblings** — grouped together regardless of how different their own
+descriptions read, since the grouping is on the field value, not
+semantic content. This is a second, separate matching mode from
+failure → learning — it answers "who else built from this," not "what
+solves this."
+
+**Example.** A steward in Blantyre posts a gravity-fed chlorine doser,
+citing a public GitHub repo as `built from` (an external reference). A
+steward in the Philippines finds this node through ANGX and builds their
+own, citing the Blantyre node's **Node ID** as `built from`. A third
+steward, in an unrelated region, independently finds the same Blantyre
+node and does the same. The Philippine and third steward's nodes are
+**siblings** — both cite the same Node ID — and the indexer clusters
+them together, discoverable from either one: reading either sibling's
+entry surfaces the other, along with the shared `built from` reference
+they both point to. The Blantyre node itself is not a sibling of either
+— it's what they both point to, not something pointing anywhere itself.
+
+Clustering applies equally to external references: if two or more nodes
+independently cite the exact same URL as `built from`, they cluster as
+siblings the same way — matched on exact string value, not fuzzy or
+normalized. Two entries citing slightly different URLs for the same
+repository (a typo, a different link format) do not currently cluster;
+only exact matches do.
 
 ## 7. Output
 
