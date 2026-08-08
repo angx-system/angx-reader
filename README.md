@@ -88,9 +88,9 @@ currently receive anything pushed from elsewhere.
 Each signal becomes a point in a vector space — close to other signals
 about the same thing, far from the rest, regardless of language.
 
-A failure signal near a learning signal — the same problem already solved
-somewhere else in the record. A method near a problem — documented
-expertise near a failure, logged by someone who has never heard of the
+A failure signal that lands near a learning signal points to a problem
+already solved somewhere else in the record. A method that lands near a
+problem points to expertise logged by someone who never heard of the
 person who needed it.
 
 Nodes that cite the same `built from` reference — the same external design,
