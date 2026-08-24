@@ -19,15 +19,9 @@ all.
 
 angx-reader is made of two parts, always installed together.
 
-**The indexer** — a silent, always-on background process. Set up once, on
-first install, pointed at the local `feeds/` directory the client already
-writes to. From that point it starts on boot and needs no re-activation. It
-requires no network access of any kind — only local file access. Every time
-a new signal lands in `feeds/`, the indexer embeds it and stores the
-resulting vector in `vectors/`, continuously, without anyone opening
-anything.
+**Indexer** — a silent, always-on background process. Set up once, on first install, subscribing to append events on every core the client's Corestore already replicates. From that point it starts on boot and needs no re-activation. It requires no network access of any kind — only local access to the client's own storage. Every time a new entry is appended to any replicated core, the append event fires and the indexer embeds it, storing the resulting vector in vectors/, continuously, without anyone opening anything.
 
-**The GUI** — a separate, minimal interface, opened on demand to view
+**GUI** — a separate, minimal interface, opened on demand to view
 matches. It is not part of the ANGX client and does not surface inside it.
 When the indexer finds a new match, it triggers an OS-level desktop
 notification; clicking it opens the GUI to the full match detail. The
@@ -38,15 +32,9 @@ what's been found.
 
 ## 1. Source
 
-angeliaX feeds, already replicated locally by the client, in `feeds/`. The
-indexer watches this directory for new signals. It opens nothing over the
-network itself; it reads what Hypercore has already written to disk.
+angeliaX feeds, already replicated locally by the client. The indexer subscribes to each core's own append notifications for new signals — it opens nothing over the network itself; it reacts to what Hypercore has already written to disk.
 
-`feeds/` requires no particular internal structure for reader's purposes.
-Reader does not define or require folder-level organization by signal
-type — filtering happens at the data level, not the filesystem level. Each
-signal's own `Signal Type` field is what reader reads to decide whether to
-embed it.
+Reader does not define or require any particular organization of the client's storage — filtering happens at the data level, not the filesystem level. Each signal's own Signal Type field is what reader reads to decide whether to embed it.
 
 ## 2. Embedding
 
