@@ -87,10 +87,11 @@ contradiction means is left entirely to the steward reading them.
 
 Everything above applies identically whether reader runs on a steward's own
 device or on a base's persistent device (a base's Raspberry Pi, for
-example). A base's `feeds/` holds full local copies of every node it
-curates, per the Collection Log — the indexer treats this exactly like any
-other `feeds/` directory, vectorizing every `failure` and `learning` signal
-across the entire collection, automatically, with no exception.
+example). A base replicates full local copies of every node it
+curates, per the Collection Log — the indexer treats each of those
+replicated cores exactly like any other core it holds, vectorizing every
+`failure` and `learning` signal across the entire collection,
+automatically, with no exception.
 
 A base is not a subject seeking matches for itself. It holds a library of
 vectors on behalf of the stewards whose work it curates, the same posture
@@ -116,8 +117,8 @@ Operational tab → [enter base p2p address, or select an already-partnered base
 This query happens in the **client**, not in reader's own GUI, over the
 network the client already uses for everything else — replicating feeds,
 querying a base, all of it. Reader itself opens no connection here; it only
-computes the answer locally, on the base's own device, from data already
-sitting in its own `feeds/`.
+computes the answer locally, on the base's own device, from cores it has
+already replicated.
 
 **Fallback, for any node, curated or not — manual text/field query.** The
 same mechanism already used for keyword search ("pythium" against a base's
@@ -172,7 +173,8 @@ Reader contains no networking code in this version. It reads local files
 and answers lookups from data already on the same device — nothing more. A
 steward wanting matches from data reader doesn't already hold locally must
 query and replicate the relevant feeds through the client first; the
-indexer picks up new signals automatically once they land in `feeds/`.
+indexer picks up new signals automatically via the append event on each
+newly replicated core.
 
 ---
 
