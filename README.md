@@ -95,7 +95,7 @@ problem points to expertise logged by someone who never heard of the
 person who needed it.
 
 Nodes that cite the same `built from` reference — the same external design,
-or the same upstream node — can be grouped as a family, even if their own
+or the same upstream node — can be grouped as siblings, even if their own
 descriptions read nothing alike.
 
 Matches are returned as a ranked list, ordered by semantic proximity —
