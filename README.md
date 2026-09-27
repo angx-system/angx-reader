@@ -4,8 +4,9 @@
 
 ---
 
-angeliaX records the operational reality of work and surplus — work built,
-methods learned, failures encountered, standing commons provisions. At
+angeliaX records the operational reality of work and standing commons
+provisions — work built, methods learned, failures encountered, provisions
+freely given. At
 sufficient density the connections between those records become impossible
 to find by reading alone. A failure logged in one place and its solution
 logged in another may never meet.
@@ -31,8 +32,8 @@ replicating a method, is as valid a match target as the original steward's
 own.
 
 Because the filter is failure → learning only, a failure can never surface
-a commons node's surplus either — surplus is never logged as a learning
-signal — it's stated once at registration and confirmed through ongoing
+a commons node's provision either — the provision itself is never logged
+as a learning signal — it's stated once at registration and confirmed through ongoing
 `operational`-type signals on the commons node itself, so it was never a
 valid match target to begin with.
 
